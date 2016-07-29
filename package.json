@@ -2,8 +2,8 @@
   "name": "fcc-react-starter",
   "version": "0.0.1",
   "description": "A very simple starter for React for FreeCodeCampers",
-  "main": "index.js",
   "scripts": {
+    "start": "./node_modules/.bin/babel-node tools/start.js",
     "test": "xo && ava"
   },
   "repository": {
