@@ -40,7 +40,7 @@ browserSync({
           timings: false,
           chunks: false,
           chunkModules: false
-        },
+        }
 
         // for other settings see
         // http://webpack.github.io/docs/webpack-dev-middleware.html

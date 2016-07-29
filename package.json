@@ -4,7 +4,7 @@
   "description": "A very simple starter for React for FreeCodeCampers",
   "scripts": {
     "start": "./node_modules/.bin/babel-node tools/start.js",
-    "test": "xo && ava"
+    "test": "export NODE_ENV=testing xo && ava"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "babel-register": "^6.11.6",
     "browser-sync": "^2.13.0",
+    "connect-history-api-fallback": "^1.2.0",
     "css-loader": "^0.23.1",
     "enzyme": "^2.4.1",
     "eslint": "^3.1.1",
@@ -43,6 +44,7 @@
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.8.0",
     "nyc": "^7.1.0",
+    "react-addons-test-utils": "^15.3.0",
     "react-test-utils": "0.0.1",
     "redux": "^3.5.2",
     "sass-loader": "^4.0.0",
@@ -54,9 +56,27 @@
     "webpack-md5-hash": "0.0.5",
     "xo": "^0.16.0"
   },
+    "ava": {
+      "babel": "inherit",
+      "require": [
+          "./test/helpers/setup-test-env.js"
+      ]
+    },
   "xo": {
     "esnext": true,
-    "space": true
+    "space": true,
+    "globals": [
+      "document"
+    ],
+    "ignores": [
+      "webpack.config.js",
+      "tools/start.js",
+      "src/webpack-public-path.js"
+    ],
+    "rules": {
+      "xo/filename-case": 0,
+      "quote-props": 0
+    }
   },
   "dependencies": {
     "react": "^15.2.1",

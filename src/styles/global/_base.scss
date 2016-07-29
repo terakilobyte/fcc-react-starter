@@ -1,0 +1,36 @@
+// - - - - - - - - - - - - - - - - - - -
+// - - base
+// project defaults for base elements - h1-h6, p, a, etc.
+@import 'modules/bourbon/bourbon';
+
+* {
+  margin: 0 auto;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}
+
+.box-trigger {
+  width: 100px;
+  height: 100px;
+}
+
+.box-trigger:hover {
+  .box {
+    background-color: red;
+    @include animation(skew 1.0s linear infinite);
+  }
+}
+
+@keyframes skew {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
