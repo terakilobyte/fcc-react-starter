@@ -1,36 +1,56 @@
 // - - - - - - - - - - - - - - - - - - -
 // - - base
 // project defaults for base elements - h1-h6, p, a, etc.
-@import 'modules/bourbon/bourbon';
+@import 'bourbon';
 
 * {
   margin: 0 auto;
 }
 
+.box-trigger {
+  text-align: center;
+  vertical-align: middle;
+  height: 100px;
+  line-height: 100px;
+}
+
+.box::before {
+  display: inline-block;
+  content: "FCC";
+  color: red;
+  vertical-align: middle;
+}
+
 .box {
   width: 100px;
   height: 100px;
-  background-color: pink;
+  border-radius: 100px;
+  transform-origin: center center;
+  @include animation(chaotic 30.0s linear infinite);
+  @include linear-gradient(#1e5799, #2989d8);
+  @include linear-gradient(to top, #8fdce5, #3dc3d1);
+  @include linear-gradient(to top, #8fdce5, #3dc3d1, $fallback: red);
+  @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
 }
 
-.box-trigger {
-  width: 100px;
-  height: 100px;
-}
-
-.box-trigger:hover {
-  .box {
-    background-color: red;
-    @include animation(skew 1.0s linear infinite);
-  }
-}
-
-@keyframes skew {
-  from {
-    transform: rotate(0deg);
+@keyframes chaotic {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
   }
 
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: translate(0px, 50px) rotate(90deg);
+  }
+
+  50% {
+    transform: translate(50px, 50px) rotate(180deg);
+  }
+
+  75% {
+    transform: translate(50px, 0px) rotate(270deg);
+  }
+
+  100% {
+    transform: translate(0px, 0px) rotate(360deg);
   }
 }

@@ -48,6 +48,6 @@ export default {
     ]
   },
   sassLoader: {
-    includePaths: [path.resolve(__dirname, './src/styles')]
+    includePaths: [path.resolve(__dirname, './src/styles'), path.resolve(__dirname, './src/styles/modules')]
   }
 };

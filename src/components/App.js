@@ -12,6 +12,9 @@ class App extends React.Component {
       <div>
         <h1>Hello World</h1>
         {this.props.children}
+        <div className='box-trigger'>
+          <div className='box' />
+        </div>
       </div>
     );
   }
